@@ -1,0 +1,41 @@
+<project name="jaxws-sample" basedir="." default="war">
+    <property name="src.dir"    value="src"/>
+    <property name="build.dir"  value="build"/>
+    <property name="webinf.dir" value="WEB-INF"/>
+    <property name="war.file"   value="HelloService.war"/>
+    <property name="lib.dir"    value="lib"/>
+
+    <!-- Include all JARs (e.g. servlet-api.jar) -->
+    <path id="compile.classpath">
+        <fileset dir="${lib.dir}" includes="**/*.jar"/>
+    </path>
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+        <delete file="${war.file}"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="${build.dir}/WEB-INF/classes"/>
+        <javac srcdir="${src.dir}"
+               destdir="${build.dir}/WEB-INF/classes"
+               includeantruntime="false"
+               classpathref="compile.classpath"/>
+    </target>
+
+    <target name="copy-webinf">
+        <copy todir="${build.dir}/WEB-INF">
+            <fileset dir="${webinf.dir}"/>
+        </copy>
+    </target>
+
+<target name="war" depends="compile, copy-webinf">
+  <war destfile="${war.file}"
+       webxml="${webinf.dir}/web.xml"
+       basedir="${build.dir}">
+    <webinf dir="${webinf.dir}"
+            includes="**/*"
+            excludes="web.xml"/>
+  </war>
+</target>
+</project>

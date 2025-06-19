@@ -1,0 +1,56 @@
+# Compiled Java files
+*.class
+
+# Log files
+*.log
+
+# Build output
+/build/
+/target/
+/bin/
+/dist/
+/*.war
+
+# Open Liberty server stuff
+/wlp/
+/usr/servers/*/logs/
+/usr/servers/*/workarea/
+/usr/servers/*/tmp/
+/usr/servers/*/dropins/
+/usr/servers/*/apps/expanded/
+
+# Libraries
+/lib/**/*.jar
+/web-inf/lib/
+/WEB-INF/lib/
+
+# IDE files
+*.iml
+*.ipr
+*.iws
+.vscode/
+.idea/
+*.classpath
+*.project
+.settings/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Maven/Gradle
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildnumber.properties
+.mvn/timing.properties
+.gradle/
+/build/
+
+# Node & front-end stuff (if applicable)
+/node_modules/
+/npm-debug.log*
+yarn-error.log
