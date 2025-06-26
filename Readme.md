@@ -4,3 +4,6 @@ This uses ant to buid the WAR file and the web.xml is used to initiate the webse
 ANT can be downloaded here: https://ant.apache.org/bindownload.cgi
 
 and the command to run this is: ant war
+
+
+Server.xml to be added to used to replace existing Server.xml in liberty server
